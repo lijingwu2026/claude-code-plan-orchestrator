@@ -1,0 +1,14 @@
+{
+  "name": "plan-orchestrator",
+  "description": "The route skill staffs every stage of a long Claude Code plan, checks each one, and tracks it on a board",
+  "owner": {
+    "name": "lijingwu2026"
+  },
+  "plugins": [
+    {
+      "name": "plan-orchestrator",
+      "source": "./",
+      "description": "Staff every stage of a long plan (split, executor, model, check), track progress on a board, and pick up from the board after Claude Code compacts."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "plan-orchestrator",
+  "version": "0.1.0",
+  "description": "The route skill staffs every stage of a long Claude Code plan (split, executor, model, check), tracks progress on a board, and picks up from the board after Claude Code compacts.",
+  "author": {
+    "name": "lijingwu2026"
+  },
+  "repository": "https://github.com/lijingwu2026/claude-code-plan-orchestrator",
+  "license": "MIT",
+  "keywords": [
+    "planning",
+    "subagents",
+    "compaction",
+    "handoff",
+    "orchestration",
+    "model-routing"
+  ],
+  "userConfig": {
+    "board_location": {
+      "type": "string",
+      "title": "Board location",
+      "description": "Where the route skill keeps its progress board: a file in the project (default PROGRESS.md), or a platform as command:<read command> ;; <write command> [;; <write command> ...], e.g. command:gh project item-list ;; gh project item-edit ;; gh project item-add",
+      "default": "PROGRESS.md"
+    },
+    "board_fields": {
+      "type": "string",
+      "title": "Board fields",
+      "description": "Comma-separated fields for each board row. Status always uses Todo, In Progress, Needs Verification, Done, Blocked.",
+      "default": "task, status, evidence"
+    }
+  }
+}
