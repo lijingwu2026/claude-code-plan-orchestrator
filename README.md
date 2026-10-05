@@ -1,3 +1,5 @@
+<img src="docs/cover.jpg" alt="plan-orchestrator: right worker, right model, every step. A Claude Code plugin." width="100%">
+
 # plan-orchestrator
 
 After you approve a plan in Claude Code, the route skill decides how each step runs and the cheapest model that can do
