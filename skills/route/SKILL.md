@@ -37,7 +37,7 @@ Design each stage's check before allocating it. A check is a runnable command, a
 
 Three slots must be fillable, and each value must point at where it came from in the user's words or in the plan. If any slot is empty, or you cannot write some stage's check, stop and ask — before running the remaining decisions, not after.
 
-Read the board at `${user_config.board_location}` before starting work. If it has no rows for this plan yet, add one row per stage at `Todo`, then read it back (Step 4).
+Read the board at `${user_config.board_location}` before starting work. If it has no rows for this plan yet, add one row per stage at `Todo`, then read it back (Step 4). The `executor` and `check` fields are filled from the Step 2 table.
 
 ```markdown
 scope
@@ -131,6 +131,7 @@ The board keeps progress on disk, so a handoff can point to it instead of copyin
 
 - Location: `${user_config.board_location}`
 - Fields per row: `${user_config.board_fields}`
+- `executor` and `check` are copied from the stage's row in the Step 2 table: `executor` is the Executor and Model cells together (for example `subagent · Sonnet`, `main session · Opus`, `script`), `check` is whoever runs the check and on which model (for example `main session · Opus`, `script`). A stage only the user does, or a check only the user can make, is `you`.
 - Status values: `Todo` · `In Progress` · `Needs Verification` · `Done` · `Blocked`. `Needs Verification` = the work is done and its check has not passed yet, including a check that waits on someone else; `Blocked` = the work itself cannot proceed.
 
 The location takes one of two forms:

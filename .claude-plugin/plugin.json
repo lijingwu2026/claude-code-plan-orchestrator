@@ -26,7 +26,7 @@
       "type": "string",
       "title": "Board fields",
       "description": "Comma-separated fields for each board row. Status always uses Todo, In Progress, Needs Verification, Done, Blocked.",
-      "default": "task, status, evidence"
+      "default": "task, status, executor, check, evidence"
     }
   }
 }
