@@ -131,7 +131,7 @@ next: [next ready stage / fixed [what] and re-verified / changed [steps] because
 The board keeps progress on disk, so a handoff can point to it instead of copying it.
 
 - Location: `${user_config.board_location}`
-- Fields per row: `${user_config.board_fields}`. A field the user removed from this list is not written.
+- Fields per row: `${user_config.board_fields}`. A field the user removed from this list is not written. Every field in the list is a column of the table, and a cell with nothing to record stays empty, not `none`.
 - `goal`: one sentence on what the step achieves, written when the row is created.
 - `deliverable` and `change`: when a row produced a file, its path and one line on what changed, starting with a verb and naming the file.
 - `artifact` and `artifact_note`: when a row produced a page for the user to view, `artifact` is a markdown link `[Title](url or path)` and `artifact_note` is one line on what the page shows.
