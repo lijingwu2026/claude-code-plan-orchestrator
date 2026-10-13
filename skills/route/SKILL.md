@@ -116,6 +116,7 @@ Per stage: execute, look at the real result, run the check from Step 1 yourself,
 - Passed → record the meaningful state change (Step 4), then take the next ready stage.
 - Recoverable failure → inspect the mechanism, fix it in place or re-dispatch with the failing output, re-verify. Repeated failure means the hypothesis is wrong: change it, and keep the unaffected work moving.
 - An assumption turned out false → change the affected steps, dependencies, allocation, or checks, and record why. A changed deliverable, a material tradeoff, or a new permission is the user's to decide.
+- New work appears (a fix, a follow-up the user asks for) → it gets its own row on the board (Step 4) before it is done.
 
 Pause only where the user explicitly asked for a review. A milestone, a worker returning, and a recoverable failure are not pauses.
 
@@ -130,7 +131,11 @@ next: [next ready stage / fixed [what] and re-verified / changed [steps] because
 The board keeps progress on disk, so a handoff can point to it instead of copying it.
 
 - Location: `${user_config.board_location}`
-- Fields per row: `${user_config.board_fields}`
+- Fields per row: `${user_config.board_fields}`. A field the user removed from this list is not written.
+- `goal`: one sentence on what the step achieves, written when the row is created.
+- `deliverable` and `change`: when a row produced a file, its path and one line on what changed, starting with a verb and naming the file.
+- `artifact` and `artifact_note`: when a row produced a page for the user to view, `artifact` is a markdown link `[Title](url or path)` and `artifact_note` is one line on what the page shows.
+- On a file board, a line `Recap: <2–3 sentences: what the plan is for, where it is now, what is next or needed from the user>` above the table, rewritten at each hand-back.
 - `executor` and `check` are copied from the stage's row in the Step 2 table: `executor` is the Executor and Model cells together (for example `subagent · Sonnet`, `main session · Opus`, `script`), `check` is whoever runs the check and on which model (for example `main session · Opus`, `script`). A stage only the user does, or a check only the user can make, is `you`.
 - Status values: `Todo` · `In Progress` · `Needs Verification` · `Done` · `Blocked`. `Needs Verification` = the work is done and its check has not passed yet, including a check that waits on someone else; `Blocked` = the work itself cannot proceed.
 

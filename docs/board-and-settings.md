@@ -2,14 +2,14 @@
 
 ## The board
 
-The board is a progress table that the route skill keeps on disk, outside the conversation. By default it is `PROGRESS.md` in the project root. Each row has the fields `task, status, executor, check, evidence`. `executor` is who runs the step and on which model (for example `subagent · Sonnet`, `script`, or `you` for a step only you can do); `check` is who verifies it (for example `main session · Opus`, `script`, or `you` when you must check). Status is one of `Todo`, `In Progress`, `Needs Verification`, `Done`, `Blocked`.
+The board is a progress table that the route skill keeps on disk, outside the conversation. By default it is `PROGRESS.md` in the project root. Each row has the fields `task, status, executor, check, goal, evidence, deliverable, change, artifact, artifact_note`. `executor` is who runs the step and on which model (for example `subagent · Sonnet`, `script`, or `you` for a step only you can do); `check` is who verifies it (for example `main session · Opus`, `script`, or `you` when you must check). Status is one of `Todo`, `In Progress`, `Needs Verification`, `Done`, `Blocked`.
 
 The skill adds one row per stage when a plan starts. At each milestone it updates the affected row with observed evidence and reads the board back. After a compaction it reads the board first, so the run picks up from there.
 
 When you enable the plugin, Claude Code asks for two settings:
 
 - `board_location`: a file path (default `PROGRESS.md`), or a board on another platform given as `command:<read command> ;; <write command> [;; <write command> ...]`, for example `command:gh project item-list ;; gh project item-edit ;; gh project item-add`.
-- `board_fields`: the comma-separated fields of each row (default `task, status, executor, check, evidence`).
+- `board_fields`: the comma-separated fields of each row (default `task, status, executor, check, goal, evidence, deliverable, change, artifact, artifact_note`).
 
 ## What the plugin writes in your project
 

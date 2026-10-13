@@ -1,6 +1,6 @@
 {
   "name": "plan-orchestrator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The route skill staffs every stage of a long Claude Code plan (split, executor, model, check), tracks progress on a board, and picks up from the board after Claude Code compacts.",
   "author": {
     "name": "lijingwu2026"
@@ -26,7 +26,7 @@
       "type": "string",
       "title": "Board fields",
       "description": "Comma-separated fields for each board row. Status always uses Todo, In Progress, Needs Verification, Done, Blocked.",
-      "default": "task, status, executor, check, evidence"
+      "default": "task, status, executor, check, goal, evidence, deliverable, change, artifact, artifact_note"
     }
   }
 }
