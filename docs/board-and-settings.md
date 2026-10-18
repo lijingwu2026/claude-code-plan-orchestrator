@@ -11,6 +11,22 @@ When you enable the plugin, Claude Code asks for two settings:
 - `board_location`: a file path (default `PROGRESS.md`), or a board on another platform given as `command:<read command> ;; <write command> [;; <write command> ...]`, for example `command:gh project item-list ;; gh project item-edit ;; gh project item-add`.
 - `board_fields`: the comma-separated fields of each row (default `task, status, executor, check, goal, evidence`).
 
+### Choose a board
+
+Pick the board with `board_location`:
+
+1. **`PROGRESS.md`** (the default). To see it live in Claude Code, add
+   [plan-tracker](https://github.com/lijingwu2026/claude-code-plan-tracker), a live board of the plan inside Claude
+   Code: every task, who's on it, what waits on you.
+
+   ```
+   /plugin marketplace add lijingwu2026/claude-code-plan-tracker
+   /plugin install plan-tracker@plan-tracker
+   ```
+
+2. **GitHub Projects**: the `gh project` command example in the `board_location` setting above.
+3. **Any other board tool**: the same `command:` form, with that tool's CLI for the read and write commands.
+
 ## What the plugin writes in your project
 
 - The board (`PROGRESS.md` by default), when a plan runs.

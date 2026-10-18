@@ -22,6 +22,22 @@ Then use plan mode as usual; the route skill only asks you when a decision is yo
   <img src="docs/route-loop.svg" width="385" alt="The route skill assigns each step, Claude Code runs it, the route skill checks it and logs it on the board; after a compaction it reads the board.">
 </picture>
 
+## Choose a board
+
+The `board_location` setting decides where the board lives. Pick one:
+
+1. **`PROGRESS.md`** (the default): a table in your project root. To see it live in Claude Code, add
+   [plan-tracker](https://github.com/lijingwu2026/claude-code-plan-tracker), a live board of the plan inside Claude
+   Code: every task, who's on it, what waits on you.
+
+   ```
+   /plugin marketplace add lijingwu2026/claude-code-plan-tracker
+   /plugin install plan-tracker@plan-tracker
+   ```
+
+2. **GitHub Projects**: `command:gh project item-list ;; gh project item-edit ;; gh project item-add`
+3. **Any other board tool**: `command:<read command> ;; <write command>`, with that tool's CLI.
+
 ## What the route skill decides
 
 For each step: how it runs (in the main session, a subagent, a script, a retry loop, an agent team or another
