@@ -35,6 +35,8 @@ The `board_location` setting decides where the board lives. Pick one:
    /plugin install plan-tracker@plan-tracker
    ```
 
+   plan-tracker reads the first `Tracker row:` line of a subagent's brief to put that subagent's cost on its task.
+
 2. **GitHub Projects**: `command:gh project item-list ;; gh project item-edit ;; gh project item-add`
 3. **Any other board tool**: `command:<read command> ;; <write command>`, with that tool's CLI.
 

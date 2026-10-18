@@ -101,9 +101,10 @@ effort: [not set / `effort: [value]` in [agent definition file]]
 
 ## Step 3: Execute and verify each stage
 
-Every brief carries these lines, filled in. A brief with a blank line is not ready to send; write `none` for References when there are none.
+Every brief carries these lines, filled in. A brief with a blank line is not ready to send; write `none` for References when there are none. The first line names the board row, which plan-tracker reads to put the subagent's tokens and cost on that task.
 
 ```
+Tracker row: "<exact task text from the board>"
 Target: <the files or outputs this worker produces — its scope>
 Check: <the exact command and pass criterion from the table's Check cell>
 References: <paths it must read>

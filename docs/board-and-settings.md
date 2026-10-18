@@ -24,6 +24,8 @@ Pick the board with `board_location`:
    /plugin install plan-tracker@plan-tracker
    ```
 
+   plan-tracker reads the first `Tracker row:` line of a subagent's brief to put that subagent's cost on its task.
+
 2. **GitHub Projects**: the `gh project` command example in the `board_location` setting above.
 3. **Any other board tool**: the same `command:` form, with that tool's CLI for the read and write commands.
 
